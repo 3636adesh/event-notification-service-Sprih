@@ -2,7 +2,6 @@ package com.malunjkar.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
 
 /**
  * Sample:
@@ -13,7 +12,7 @@ import lombok.Data;
  *
  * @author adesh.malunjkar
  */
-@Data
+
 public class EmailPayload {
 
     @Email(message = "recipient must be a valid email")
@@ -22,4 +21,29 @@ public class EmailPayload {
 
     @NotBlank(message = "message is required")
     private String message;
+
+    public EmailPayload() {
+        // Default constructor
+    }
+
+    public EmailPayload(String recipient, String message) {
+        this.recipient = recipient;
+        this.message = message;
+    }
+
+    public @Email(message = "recipient must be a valid email") @NotBlank(message = "recipient is required") String getRecipient() {
+        return recipient;
+    }
+
+    public void setRecipient(@Email(message = "recipient must be a valid email") @NotBlank(message = "recipient is required") String recipient) {
+        this.recipient = recipient;
+    }
+
+    public @NotBlank(message = "message is required") String getMessage() {
+        return message;
+    }
+
+    public void setMessage(@NotBlank(message = "message is required") String message) {
+        this.message = message;
+    }
 }

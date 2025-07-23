@@ -9,3 +9,4 @@ public enum EventType {
     SMS,
     PUSH
 }
+

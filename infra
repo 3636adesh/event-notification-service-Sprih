@@ -1,0 +1,36 @@
+# Project Structure
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── sprih
+│   │   │           ├── config
+│   │   │           │   └── ShutdownConfig.java
+│   │   │           ├── controller
+│   │   │           │   └── EventController.java
+│   │   │           ├── model
+│   │   │           │   ├── Event.java
+│   │   │           │   ├── EventType.java
+│   │   │           │   ├── EmailEvent.java
+│   │   │           │   ├── SmsEvent.java
+│   │   │           │   ├── PushEvent.java
+│   │   │           │   └── EventResponse.java
+│   │   │           ├── service
+│   │   │           │   ├── EventService.java
+│   │   │           │   └── CallbackService.java
+│   │   │           └── processor
+│   │   │               └── EventProcessor.java
+│   │   └── resources
+│   │       └── application.properties
+│   ├── test
+│   │   └── java
+│   │       └── com
+│   │           └── sprih
+│   │               ├── controller
+│   │               │   └── EventControllerTest.java
+│   │               └── service
+│   │                   └── EventServiceTest.java
+├── Dockerfile
+├── docker-compose.yml
+├── pom.xml
+└── README.md

@@ -1,59 +1,34 @@
 package com.malunjkar.model;
 
-import com.malunjkar.constant.EventStatus;
-
-
-import java.time.Instant;
-import java.util.Map;
-import java.util.UUID;
-
-/**
- * Event.java
- *
- * Represents a notification event with payload and callback support.
- *
- * @author Adesh Malunjkar
- * @since 2025-07-17
- */
+import com.malunjkar.constant.EventType;
 
 public class Event {
-
-    private String id = UUID.randomUUID().toString();
-
-    private String type; // EMAIL, SMS, PUSH
-
-    private Map<String, Object> payload;
-
+    private EventType eventType;
+    private Object payload;
     private String callbackUrl;
-
-    private EventStatus status = EventStatus.PENDING;
-
-    private Instant createdAt = Instant.now();
 
     public Event() {
     }
 
-    public String getId() {
-        return id;
+    public Event(EventType eventType, Object payload, String callbackUrl) {
+        this.eventType = eventType;
+        this.payload = payload;
+        this.callbackUrl = callbackUrl;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public EventType getEventType() {
+        return eventType;
     }
 
-    public String getType() {
-        return type;
+    public void setEventType(EventType eventType) {
+        this.eventType = eventType;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Map<String, Object> getPayload() {
+    public Object getPayload() {
         return payload;
     }
 
-    public void setPayload(Map<String, Object> payload) {
+    public void setPayload(Object payload) {
         this.payload = payload;
     }
 
@@ -65,19 +40,12 @@ public class Event {
         this.callbackUrl = callbackUrl;
     }
 
-    public EventStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(EventStatus status) {
-        this.status = status;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventType=" + eventType +
+                ", payload=" + payload +
+                ", callbackUrl='" + callbackUrl + '\'' +
+                '}';
     }
 }

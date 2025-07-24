@@ -53,7 +53,6 @@ public class EventService {
     @PreDestroy
     public void shutdown() {
         acceptingEvents = false;
-        // Allow queues to process remaining events
         while (!emailQueue.isEmpty() || !smsQueue.isEmpty() || !pushQueue.isEmpty()) {
             try {
                 Thread.sleep(100);

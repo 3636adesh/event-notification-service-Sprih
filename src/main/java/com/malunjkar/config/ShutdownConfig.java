@@ -1,4 +1,3 @@
-// src/main/java/com/sprih/config/ShutdownConfig.java
 package com.malunjkar.config;
 
 import org.springframework.context.annotation.Bean;

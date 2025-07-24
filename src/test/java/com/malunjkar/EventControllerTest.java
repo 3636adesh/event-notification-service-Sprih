@@ -1,4 +1,3 @@
-// src/test/java/com/sprih/controller/EventControllerTest.java
 package com.malunjkar;
 
 import com.malunjkar.constant.EventType;

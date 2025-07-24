@@ -8,7 +8,6 @@ import com.malunjkar.model.PushEvent;
 import com.malunjkar.model.SmsEvent;
 import com.malunjkar.service.EventService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/events")
 public class EventController {
 
-    @Autowired
-    private EventService eventService;
+    private final EventService eventService;
+
+    public EventController(EventService eventService) {
+        this.eventService = eventService;
+    }
 
     @PostMapping
     public ResponseEntity<EventResponse> createEvent(@Valid @RequestBody Event event) {

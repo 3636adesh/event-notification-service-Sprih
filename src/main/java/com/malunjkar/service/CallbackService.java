@@ -27,7 +27,6 @@ public class CallbackService {
         try {
             restTemplate.postForEntity(event.getCallbackUrl(), callbackBody, String.class);
         } catch (Exception e) {
-            // Log failure (in production, use proper logging)
             System.err.println("Callback failed for eventId: " + eventId + ", URL: " + event.getCallbackUrl());
         }
     }

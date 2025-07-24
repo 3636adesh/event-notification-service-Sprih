@@ -1,4 +1,3 @@
-// src/main/java/com/sprih/processor/EventProcessor.java
 package com.malunjkar.processor;
 
 import com.malunjkar.constant.EventType;

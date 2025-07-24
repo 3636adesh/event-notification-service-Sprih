@@ -52,7 +52,7 @@ A Java Spring Boot-based system to asynchronously process `EMAIL`, `SMS`, and `P
    java -jar target/event-notification-system-1.0-SNAPSHOT.jar
    ```
 
-The API will be available at `http://localhost:8080/api/events`.
+The API will be available at `http://localhost:8081/api/events`.
 
 ### 🐳 Option 2: Run with Docker Compose
 
@@ -63,7 +63,7 @@ The API will be available at `http://localhost:8080/api/events`.
    docker-compose up --build
    ```
 
-The API will be available at `http://localhost:8080/api/events`.
+The API will be available at `http://localhost:8081/api/events`.
 
 ---
 

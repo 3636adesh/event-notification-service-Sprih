@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
@@ -22,9 +21,11 @@ public class EventServiceTest {
 
     @BeforeEach
     public void setUp() {
-        // Initialize with a new executor for testing
     }
 
+    /**
+     * This test checks that an event with a valid type is added to the correct queue.
+     */
     @Test
     public void testAddEventToCorrectQueue() {
         Event emailEvent = new Event();
@@ -40,6 +41,9 @@ public class EventServiceTest {
         assertNotNull(eventId);
     }
 
+    /**
+     * This test checks that an event with an unsupported type throws an exception.
+     */
     @Test
     public void testGracefulShutdown() {
         Event event = new Event();

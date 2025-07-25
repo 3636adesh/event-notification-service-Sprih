@@ -4,6 +4,11 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.malunjkar.constant.EventType;
 
+
+/**
+ * Represents an event with a specific type and payload.
+ * The payload can be of different types based on the event type.
+ */
 public class Event {
     private EventType eventType;
     @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXTERNAL_PROPERTY, property = "eventType")

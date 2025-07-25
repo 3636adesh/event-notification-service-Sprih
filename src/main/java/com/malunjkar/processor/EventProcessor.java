@@ -21,13 +21,18 @@ public class EventProcessor implements Runnable {
         this.processingTime = processingTime;
     }
 
+    /**
+     * Processes events from the queue. Each event is processed by simulating a delay,
+     * and then a callback is sent to the event's callback URL.
+     * If processing fails, an error message is included in the callback.
+     */
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {
                 Event event = queue.take();
                 String eventId = java.util.UUID.randomUUID().toString();
-                Thread.sleep(processingTime); // Simulate processing time
+                Thread.sleep(processingTime);
                 boolean isSuccess = !callbackService.simulateRandomFailure();
                 String errorMessage = isSuccess ? null : "Simulated processing failure";
                 callbackService.sendCallback(event, eventId, isSuccess, errorMessage);

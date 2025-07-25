@@ -31,7 +31,13 @@ public class CallbackService {
         }
     }
 
+    /**
+     * Simulates a random failure with a 10% chance.
+     * This method can be used to simulate processing failures in tests or during development.
+     *
+     * @return true if the operation should be considered a failure, false otherwise.
+     */
     public boolean simulateRandomFailure() {
-        return random.nextDouble() < 0.1; // 10% failure rate
+        return random.nextDouble() < 0.1;
     }
 }
